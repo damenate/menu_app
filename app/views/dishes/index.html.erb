@@ -1,20 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Yummy Nom Nom</h1>
-
-<% @courses.each do |course| %>
-  <p><%= course.name %></p>
-    <% course.dishes.each do |dish|%>
-      <%= dish.name %>
-      <%= dish.description %>
-      <%= dish.price %>
-    <% end %>
-    <%= link_to 'New_Dish', new_dish_path(course_id: course_id)%>
-<% end %>
-
-
-
-
 <table class="whole-thing">
   <thead>
     <tr>

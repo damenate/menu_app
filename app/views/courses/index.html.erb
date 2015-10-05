@@ -1,15 +1,16 @@
 <div class="whole-thing">
-  <h1 class="yummy">Create Yummy Nom Menu</h1>
+  <h1>Yummy Nom Nom</h1>
 
-    <div class="field">
-      <p class= "choose">Choose your Course</p>
-      <p><%=link_to'Breakfast', new_dish_path %></p>
-      <p><% dishes.where(course_id: 1).each do |dish|%></p>
-        <p><%= dish.name %></p>
+  <% @courses.each do |course| %>
+    <p><%= course.name %></p>
+        <% course.dishes.each do |dish|%>
+      <div class="course-names">
+        <%= dish.name %>
+        <%= dish.description %>
+        <%= dish.price %>
+      </div>
       <% end %>
-
-      <p><%=link_to'Lunch', new_dish_path %></p>
-      <p><%=link_to'Dinner', new_dish_path %></p>
-    </div>
+    <p>  <%= link_to 'New_Dish', new_dish_path(course_id: course.id)%></p>
+  <% end %>
 
 </div>
