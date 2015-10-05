@@ -1,0 +1,27 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.whole-thing {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    border:3px solid #8AC007;
+    padding: 10px;
+    .field {
+      text-align: center;
+    }
+      .actions {
+        text-align: center;
+      }
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.back-button {
+  text-align: center;
+}
