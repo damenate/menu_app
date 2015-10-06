@@ -9,6 +9,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/1
   def show
+    redirect_to dishes_path
   end
 
   # GET /dishes/new
@@ -18,6 +19,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/1/edit
   def edit
+    @dish = Dish.all
   end
 
   # POST /dishes
@@ -54,6 +56,6 @@ class DishesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def dish_params
-      params.require(:dish).permit(:name, :description, :price)
+      params.require(:dish).permit(:name, :description, :price, :course_id)
     end
 end
