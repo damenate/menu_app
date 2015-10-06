@@ -18,8 +18,7 @@
       <p>Description: <%= dish.description %></p>
       <p>Price: <%= dish.price %></p>
     <% end %>
+  <% end%>
 <p>  <%= link_to 'New_Dish', new_dish_path(course_id: course.id)%></p>
-<p>  <%= link_to
-  <% end %>
-  </div>
+<p>  <%= link_to 'Edit_Dish', edit_dish_path(name: dish.name) %> </p>
 </div>
