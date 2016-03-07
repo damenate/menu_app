@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$marigold: #FF6D24;
+$korean: #0000FF;
 
 .header {
   text-align: center;
-  color: $marigold;
+  color: $korean;
   font-size: 28px;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -19,6 +19,6 @@ $marigold: #FF6D24;
 .details {
   font-style: italic;
     #dish {
-      color: $marigold;
+      color: $korean;
     }
 }
