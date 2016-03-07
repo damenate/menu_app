@@ -4,21 +4,29 @@
   <h1>Yummy Nom Nom</h1>
 
   <% @courses.each do |course| %>
-    <h3><%= course.name %></h3>
-
+  <h3><%= course.name %></h3>
     <% if course.id == 1 %>
-        <%= image_tag asset_url("korean_breakfast.jpg"), class: "image" %>
-      <% elsif course.id == 2 %>
-        <%= image_tag asset_url("korean_lunch.jpg"), class: "image" %>
-      <% else course.id == 3 %>
-        <%= image_tag asset_url("korean_dinner.jpg"), class: "image" %>
-      <% end %>
-    <% course.dishes.each do |dish|%>
-      <p><a href= <%= edit_dish_path(dish)%>><%= dish.name%></a></p>
-      <p>Description: <%= dish.description %></p>
-      <p>Price: <%= dish.price %></p>
+      <%= image_tag asset_url("korean_breakfast.jpg"), class: "image" %>
+    <% elsif course.id == 2 %>
+      <%= image_tag asset_url("korean_lunch.jpg"), class: "image" %>
+    <% else course.id == 3 %>
+      <%= image_tag asset_url("korean_dinner.jpg"), class: "image" %>
     <% end %>
-  <% end%>
-<p>  <%= link_to 'New_Dish', new_dish_path(course_id: course.id)%></p>
-<p>  <%= link_to 'Edit_Dish', edit_dish_path(name: dish.name) %> </p>
+    <% course.dishes.each do |dish|%>
+    <p>
+      <%= edit_dish_path %> | <%= dish.name%>
+    </p>
+    <p>Description:
+      <%= dish.description %></p>
+    <p>Price:
+      <%= dish.price %></p>
+    <p>
+      <%= link_to dish.name, edit_dish_path(dish)%>
+    </p>
+    <% end %>
+    <p>
+      <%= link_to 'New_Dish', new_dish_path(course_id: course.id)%></p>
+
+  <% end %>
+
 </div>

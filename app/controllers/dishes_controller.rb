@@ -3,7 +3,8 @@ class DishesController < ApplicationController
 
   # GET /dishes
   def index
-    @dishes = Dish.all
+    #@dishes = Dish.all, dont need these bc your looping over courses
+    #and asking for dish.
     @courses = Course.all
   end
 
@@ -19,7 +20,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/1/edit
   def edit
-    @dish = Dish.all
+    @dish = Dish.find
   end
 
   # POST /dishes

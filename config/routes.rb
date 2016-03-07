@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   root 'dishes#index'
-
   get 'courses/index'
-
   get 'courses/show'
-
   resources :dishes
+
+  # resources :courses do
+  #   resources :dishes
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
