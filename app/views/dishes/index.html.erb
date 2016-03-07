@@ -5,40 +5,41 @@
   <p class="header">Yummy Nom Nom </p>
 
   <% @courses.each do |course| %>
-  <div class="row">
-    <div class="col-md-4">
-      <h3 class="text-center">
-        <%= course.name %>
-          <% if course.id == 1 %>
-            <%= image_tag asset_url("korean_breakfast.jpg"), class: "image" %>
-          <% elsif course.id == 2 %>
-            <%= image_tag asset_url("korean_lunch.jpg"), class: "image" %>
-          <% else course.id == 3 %>
-            <%= image_tag asset_url("korean_dinner.jpg"), class: "image" %>
-          <% end %>
-        </div>
-        <div class="col-md-6">
-          <% course.dishes.each do |dish|%>
-          <dl>
-          <br />
-        <dt id="dish_name">
-          <a href= <%= edit_dish_path(dish) %>> <%= dish.name%></a>
-        </dt>
-           <dd class="details">
-             <scan id="dish">Description:</scan>
-              <%= dish.description %></dd>
-            <dd class="details">
-              <scan id="dish">Price:</scan>
-              $<%= dish.price.to_i %></dd>
-              <br />
-              <%= link_to dish.name, edit_dish_path(dish)%>
-            </dl>
-           <br />
-       </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">
+          <%= course.name %>
+            <% if course.id == 1 %>
+              <%= image_tag asset_url("korean_breakfast.jpg"), class: "image" %>
+            <% elsif course.id == 2 %>
+              <%= image_tag asset_url("korean_lunch.jpg"), class: "image" %>
+            <% else course.id == 3 %>
+              <%= image_tag asset_url("korean_dinner.jpg"), class: "image" %>
             <% end %>
-          <p>
-         <button type="button" class="btn btn-warning">  <%= link_to 'New_Dish', new_dish_path(course_id: course.id)%></button>
-      </h3>
-  <% end %>
+          </div>
+          <div class="col-md-6">
+            <% course.dishes.each do |dish|%>
+            <dl>
+            <br />
+          <dt id="dish_name">
+            <a href= <%= edit_dish_path(dish) %>> <%= dish.name%></a>
+          </dt>
+             <dd class="details">
+               <scan id="dish">Description:</scan>
+                <%= dish.description %></dd>
+              <dd class="details">
+                <scan id="dish">Price:</scan>
+                $<%= dish.price.to_i %></dd>
+                <br />
+                <%= link_to dish.name, edit_dish_path(dish)%>
+              </dl>
+             <br />
+         </div>
+              <% end %>
+              <button type="button" class="btn btn-warning">  <%= link_to 'New_Dish', new_dish_path(course_id: course.id)%></button>
+        </h3>
+          <% end %>
 
+    </div>
+  </div>
 </div>
