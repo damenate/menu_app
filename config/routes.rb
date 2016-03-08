@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :courses
+resources :dishes
+
+    root to: "courses#index"
+  end
+
   root 'dishes#index'
   get 'courses/index'
   get 'courses/show'

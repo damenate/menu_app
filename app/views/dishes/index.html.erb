@@ -6,7 +6,7 @@
 
   <% @courses.each do |course| %>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-5">
         <h3 class="text-center">
           <%= course.name %>
             <% if course.id == 1 %>
@@ -36,7 +36,7 @@
              <br />
          </div>
               <% end %>
-              <button type="button" class="btn btn-warning">  <%= link_to 'New_Dish', new_dish_path(course_id: course.id)%></button>
+              <button type="button" class="btn btn-warning">  <%= link_to 'New Dish', new_dish_path(course_id: course.id)%></button>
         </h3>
           <% end %>
 

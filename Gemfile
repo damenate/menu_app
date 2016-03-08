@@ -27,7 +27,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem "administrate", "~> 0.1.4"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'puma'
